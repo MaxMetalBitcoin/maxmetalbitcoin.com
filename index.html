@@ -6,6 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Max Dignan's Website">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
+
+    section {
+      scroll-snap-align: start;
+      -webkit-overflow-scrolling: touch;
+    }
+
     body {
       margin: 0px;
       padding: 0px;
@@ -57,25 +71,100 @@
     .top-wrapper {}
 
     .bottom-wrapper {}
+
+
+    .main-title {
+      font-size: 48pt;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .all-word {
+      font-weight: bold;
+    }
+
+    .description {
+      font-size: 24pt;
+      text-align: center;
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+      font-weight: 200;
+    }
+
+    .welcome-to {
+      margin-bottom: 3vh;
+      font-size: 20pt;
+      font-weight: 100;
+    }
   </style>
   <title>Max Metal Bitcoin</title>
   <link rel="shortcut icon" type="image/png" href="favicon.ico" />
 </head>
 
 <body>
-  <div class="outer-wrapper-blue">
-    <div class="wrapper-blue top-wrapper">
-      <div class="inner-content">Max Metal Bitcoin</div>
-      <div class="inner-content">Max Metal Bitcoin</div>
-      <div class="inner-content">Max Metal Bitcoin</div>
-    </div>
-  </div>
-  <div class="outer-wrapper-orange bottom-wrapper">
-    <div class="wrapper-orange">
-      <div class="inner-content">Max Metal Bitcoin</div>
-      <div class="inner-content">Max Metal Bitcoin</div>
-      <div class="inner-content">Max Metal Bitcoin</div>
-    </div>
+  <div class="container">
+    <section class="outer-wrapper-blue">
+      <div class="wrapper-blue top-wrapper">
+        <div class="inner-content welcome-to">Welcome to</div>
+        <div class="inner-content main-title">Max Metal Bitcoin</div>
+        <div class="inner-content description">The Ultimate Hardware Wallet and Tools for <span
+            class="all-word">ALL</span> Bitcoiners
+        </div>
+        <div class="inner-content">We focus on:</div>
+        <ul class="inner-content">
+          <li><a href="#easeOfUse">Ease of use, leading to confidence in use</a></li>
+          <li><a href="#multiSig">Blissful MultiSig Support</a></li>
+          <li><a href="#verifiable">Independent Verifiability</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="outer-wrapper-blue" id="easeOfUse">
+      <div class="wrapper-blue top-wrapper">
+        <h3>How does ease of use lead to confidence in use?</h3>
+        <p>Simply put, if you have to use the guide for simple tasks - every time you use the wallet - you're not
+          confident
+          with the wallet. By building the User Experience and Menuing in an ergonomic and intuitive manner, we deliver
+          exactly what you want. No need to Google. <a href="/preorder.html">Want an easy-to-use, but super secure
+            hardware
+            wallet? Pre-order today!</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="outer-wrapper-blue" id="multiSig">
+      <div class="wrapper-blue top-wrapper">
+        <h3>How do we make MultiSig a better experience?</h3>
+        <p>
+          Using PSBT (BIP 174), we can interoperate with any other PSBT-supporting wallet or coordinator (such as
+          Sparrow
+          or
+          Specter). By putting QR Codes to use, we can securely transfer partially-signed transactions between hardware
+          wallets and coordinators. We also bump the safety by automatically verifying output addresses - including
+          change
+          -
+          while displaying all of this to the user to verify as well. <a href="/preorder.html">Want MultiSig Bliss?
+            Pre-order
+            today!</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="outer-wrapper-blue" id="verifiable">
+      <div class="wrapper-blue top-wrapper">
+        <h3>What do we do to make this project independently verifiable?</h3>
+        <p>
+          We are committed to open source (MIT License) of the whole project. Firmware, hardware schematics, parts list,
+          etc. Using
+          docker, our goal is to always release reproducible builds. We will also reach out to members of the community
+          to
+          build it themselves and sign the build with their PGP keys, allowing our users to verify their software from
+          many
+          sources. The community will be free to build this on their own, however we recognize its much easier to buy it
+          from us than to start soldering boards. <a href="/preorder.html">That's where we come in! Pre-order today!</a>
+        </p>
+      </div>
+    </section>
   </div>
 </body>
 
