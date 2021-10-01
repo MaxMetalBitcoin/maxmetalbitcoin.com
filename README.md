@@ -1,0 +1,1 @@
+This is the source for the website at maxmetalbitcoin.com. This site is a no-compile-needed website. Easy peasy.
