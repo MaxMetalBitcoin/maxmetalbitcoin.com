@@ -45,7 +45,117 @@
       font-size: 48pt;
       text-align: center;
       font-weight: bold;
+
+      -webkit-animation: fadein 2s;
+      /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 2s;
+      /* Firefox < 16 */
+      -ms-animation: fadein 2s;
+      /* Internet Explorer */
+      -o-animation: fadein 2s;
+      /* Opera < 12.1 */
+      animation: fadein 2s;
     }
+
+    .fade-up-and-in {
+      animation: moveUp 2s ease;
+      opacity: 1;
+    }
+
+    @keyframes moveUp {
+      from {
+        transform: translate3d(0px, 100px, 0px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
+      }
+    }
+
+    /* Firefox < 16 */
+    @-moz-keyframes moveUp {
+      from {
+        transform: translate3d(0px, 100px, 0px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
+      }
+    }
+
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes moveUp {
+      from {
+        transform: translate3d(0px, 100px, 0px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
+      }
+    }
+
+    /* Internet Explorer */
+    @-ms-keyframes moveUp {
+      from {
+        transform: translate3d(0px, 100px, 0px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Firefox < 16 */
+    @-moz-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Internet Explorer */
+    @-ms-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
 
     .all-word {
       font-weight: bold;
@@ -78,6 +188,49 @@
     .bulletpoints li {
       list-style-type: none;
     }
+
+    .modal {
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      left: 0;
+      top: 0;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      /* Could be more or less, depending on screen size */
+    }
+
+    #closePreorder {
+      float: right;
+      font-size: 16pt;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column;
+    }
+
+    .preorderHref {
+      color: rgba(0, 35, 193, 1);
+      font-weight: bolder;
+    }
+
+    .content {
+      padding: 16%;
+    }
   </style>
   <title>Max Metal Bitcoin</title>
   <link rel="shortcut icon" type="image/png" href="favicon.ico" />
@@ -89,11 +242,11 @@
       <div class="wrapper-blue top-wrapper">
         <div class="inner-content welcome-to">Welcome to</div>
         <div class="inner-content main-title">Max Metal Bitcoin</div>
-        <div class="inner-content description">The Ultimate Hardware Wallet and Tools for <span
+        <div class="inner-content description fade-up-and-in">The Ultimate Hardware Wallet and Tools for <span
             class="all-word">ALL</span> Bitcoiners
         </div>
-        <div class="inner-content we-focus">We focus on:</div>
-        <ul class="inner-content bulletpoints">
+        <div class="inner-content we-focus fade-up-and-in">We focus on:</div>
+        <ul class="inner-content bulletpoints fade-up-and-in">
           <li><a href="#easeOfUse">Ease of use, leading to confidence in use</a></li>
           <li><a href="#multiSig">Blissful MultiSig Support</a></li>
           <li><a href="#verifiable">Independent Verifiability</a></li>
@@ -101,19 +254,20 @@
       </div>
     </section>
     <section class="outer-wrapper-blue" id="easeOfUse">
-      <div class="wrapper-blue top-wrapper">
+      <div class="wrapper-blue top-wrapper content">
         <h3>How does ease of use lead to confidence in use?</h3>
         <p>Simply put, if you have to use the guide for simple tasks - every time you use the wallet - you're not
           confident
           with the wallet. By building the User Experience and Menuing in an ergonomic and intuitive manner, we deliver
-          exactly what you want. No need to Google. <a href="/preorder.html">Want an easy-to-use, but super secure
+          exactly what you want. No need to Google. <a class="preorderHref">Want an easy-to-use,
+            but super secure
             hardware
             wallet? Pre-order today!</a>
         </p>
       </div>
     </section>
     <section class="outer-wrapper-blue" id="multiSig">
-      <div class="wrapper-blue top-wrapper">
+      <div class="wrapper-blue top-wrapper content">
         <h3>How do we make MultiSig a better experience?</h3>
         <p>
           Using PSBT (BIP 174), we can interoperate with any other PSBT-supporting wallet or coordinator (such as
@@ -123,14 +277,15 @@
           wallets and coordinators. We also bump the safety by automatically verifying output addresses - including
           change
           -
-          while displaying all of this to the user to verify as well. <a href="/preorder.html">Want MultiSig Bliss?
+          while displaying all of this to the user to verify as well. <a class="preorderHref">Want
+            MultiSig Bliss?
             Pre-order
             today!</a>
         </p>
       </div>
     </section>
     <section class="outer-wrapper-blue" id="verifiable">
-      <div class="wrapper-blue top-wrapper">
+      <div class="wrapper-blue top-wrapper content">
         <h3>What do we do to make this project independently verifiable?</h3>
         <p>
           We are committed to open source (MIT License) of the whole project. Firmware, hardware schematics, parts list,
@@ -140,11 +295,54 @@
           build it themselves and sign the build with their PGP keys, allowing our users to verify their software from
           many
           sources. The community will be free to build this on their own, however we recognize its much easier to buy it
-          from us than to start soldering boards. <a href="/preorder.html">That's where we come in! Pre-order today!</a>
+          from us than to start soldering boards. <a class="preorderHref">That's where we come in!
+            Pre-order today!</a>
         </p>
       </div>
     </section>
   </div>
+
+
+  <div class="modal" id="preorder">
+    <div class="modal-content">
+      <div id="closePreorder">&times;</div>
+      <div class="flex">
+        <h2>Max Metal Bitcoin Hardware Wallet</h2>
+        <p>Preorder for $20 for a 50% coupon at release.</p>
+        <br>
+        <div id="preorderBTCPayServer">
+          <a
+            href="https://btc.exitpay.org/api/v1/invoices?storeId=CbWG72M9Y6xxe4jY6ypmVK51Av8TQf12SBdysAA3WWLG&browserRedirect=https%3A%2F%2Fmaxmetalbitcoin.com%2Fpreorder-success.html&notifyEmail=maxdignan%40gmail.com&price=20&currency=USD">
+            <img src="https://btc.exitpay.org/img/paybutton/pay.svg" alt="Pay with BTCPayServer">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const preorderModal = document.getElementById("preorder");
+    const closePreorderButton = document.getElementById("closePreorder");
+    const preorderBTCPayServer = document.getElementById("preorderBTCPayServer");
+
+    const turnOnPreorderModal = function () {
+      preorderModal.style.display = 'flex';
+      document.getElementsByClassName("container")[0].style.filter = "blur(5px)";
+      console.log("hi")
+    };
+
+    const turnOffPreorderModal = function () {
+      preorderModal.style.display = 'none';
+      document.getElementsByClassName("container")[0].style.filter = "none";
+      console.log("hi")
+    };
+
+    [...document.getElementsByClassName('preorderHref')].forEach(el => {
+      el.onclick = turnOnPreorderModal;
+    })
+
+    closePreorderButton.onclick = turnOffPreorderModal;
+  </script>
 </body>
 
 </html>
